@@ -1,162 +1,98 @@
 .checkout-page {
-  padding: 20px 0 60px;
-  max-width: 500px;
-  margin: 0 auto;
-  animation: fadeInUp 0.4s ease forwards;
-}
-
-.checkout-page h1 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 36px;
-  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 96px 0 56px;
+  display: flex;
+  justify-content: center;
 }
 
 .checkout-card {
+  width: 100%;
+  max-width: 480px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 36px;
-  position: relative;
-  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
 }
 
-.checkout-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(135deg, #f97316, #fb923c);
+.checkout-summary {
+  margin-bottom: 20px;
 }
 
-.checkout-summary h3 {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 22px;
-  color: var(--text-primary);
+.pizza-details {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin: 16px 0;
 }
-
-.pizza-details { margin-bottom: 28px; }
 
 .pizza-detail-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px dashed var(--border);
-  font-size: 14px;
+  padding: 7px 0;
+  font-size: 13.5px;
 }
-
-.pizza-detail-row:last-child { border-bottom: none; }
 
 .pizza-detail-label {
   color: var(--text-secondary);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .pizza-detail-value {
   color: var(--text-primary);
   font-weight: 600;
   text-align: right;
+  max-width: 60%;
 }
 
 .checkout-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 28px 0;
+  background: var(--border);
+  margin: 18px 0;
 }
 
 .checkout-total {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  margin-bottom: 28px;
-  font-size: 18px;
-  font-weight: 800;
+  align-items: baseline;
+  margin-bottom: 24px;
 }
 
-.checkout-total-label { color: var(--text-secondary); }
+.checkout-total-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
 
 .checkout-total-amount {
-  color: #f97316;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
 .checkout-button {
   width: 100%;
-  padding: 15px;
-  background: linear-gradient(135deg, #f97316, #fb923c);
-  color: #fff;
-  border: none;
-  border-radius: 22px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: var(--font-body);
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.checkout-button:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(249,115,22,0.35);
-}
-
-.checkout-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  animation: none;
 }
 
 .checkout-success {
   text-align: center;
-  padding: 56px 36px;
+  padding: 40px 20px;
 }
 
 .checkout-success-icon {
-  font-size: 72px;
-  margin-bottom: 20px;
-  display: inline-block;
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-.checkout-success h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 10px;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--success-bg);
   color: var(--success);
-}
-
-.checkout-success p {
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
 }
 
 .no-orders {
   text-align: center;
-  padding: 56px 36px;
-}
-
-.no-orders p { font-size: 60px; margin-bottom: 20px; }
-
-.no-orders h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--text-primary);
-}
-
-@media (max-width: 600px) {
-  .checkout-card { padding: 28px 20px; }
-  .checkout-page h1 { font-size: 26px; }
-  .pizza-detail-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  padding: 60px 20px;
+  color: var(--text-tertiary);
 }
