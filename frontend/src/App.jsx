@@ -7,7 +7,6 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import { toastOptions } from "./utils/toastOptions";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
@@ -145,7 +144,17 @@ const App = () => (
   <Router>
     <AuthProvider>
       <AppRoutes />
-      <ToastContainer {...toastOptions} theme="dark" />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+        closeOnClick={false}
+        newestOnTop={false}
+        draggable={false}
+        theme="dark"
+      />
     </AuthProvider>
   </Router>
 );
