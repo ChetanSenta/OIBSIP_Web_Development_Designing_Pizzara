@@ -55,10 +55,6 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <div className="admin-quick-links">
-        <Link to="/admin/inventory" className="btn btn-primary btn-lg">📦 Manage Inventory</Link>
-        <Link to="/admin/orders" className="btn btn-secondary btn-lg">🛒 Manage Orders</Link>
-      </div>
     </div>
   );
 };

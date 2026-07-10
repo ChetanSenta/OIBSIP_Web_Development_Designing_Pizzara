@@ -153,6 +153,7 @@ const App = () => (
         closeOnClick={false}
         newestOnTop={false}
         draggable={false}
+        closeButton={false}
         theme="dark"
       />
     </AuthProvider>

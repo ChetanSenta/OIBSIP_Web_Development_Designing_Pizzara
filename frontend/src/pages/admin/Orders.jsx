@@ -56,7 +56,7 @@ const Orders = () => {
       </div>
 
       {filtered.length === 0 ? (
-        <div style={{textAlign:'center',padding:'40px',color:'var(--text-muted)'}}>No orders found</div>
+        <div className="admin-orders-empty">No orders found</div>
       ) : (
         filtered.map(order => (
           <div className="admin-order-card" key={order._id}>
@@ -77,9 +77,9 @@ const Orders = () => {
             </div>
 
             <div className="admin-order-footer">
-              <span style={{fontSize:20,fontWeight:700,color:'var(--accent-gold)'}}>₹{order.totalPrice}</span>
+              <span>₹{order.totalPrice}</span>
               <div style={{display:'flex',alignItems:'center',gap:8}}>
-                <label style={{fontSize:13,color:'var(--text-muted)'}}>Status:</label>
+                <label style={{fontSize:13,color:'var(--text-secondary)'}}>Status:</label>
                 <select
                   className="status-select"
                   value={order.status}

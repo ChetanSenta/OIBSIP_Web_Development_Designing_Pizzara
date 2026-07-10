@@ -1,3 +1,7 @@
+/* ============================================================
+   Admin Dashboard — redesigned to match Orders page style
+   ============================================================ */
+
 .admin-dash {
   animation: fadeInUp 0.4s ease forwards;
 }
@@ -6,8 +10,14 @@
   font-size: 32px;
   font-weight: 800;
   letter-spacing: -1px;
-  margin-bottom: 36px;
+  margin-bottom: 6px;
   color: var(--text-primary);
+}
+
+.admin-dash-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
 }
 
 /* ── Stats grid ── */
@@ -19,21 +29,54 @@
 }
 
 .stat-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   padding: 28px 24px;
   text-align: center;
-  transition: all 0.22s ease;
+  transition: all var(--t);
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  opacity: 0;
+  transition: opacity var(--t);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  border-color: #f97316;
-  box-shadow: 0 12px 32px rgba(249,115,22,0.1);
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 12px 32px var(--primary-glow);
 }
 
-.stat-icon { font-size: 36px; margin-bottom: 14px; }
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--primary-glow);
+  font-size: 28px;
+  transition: transform var(--t);
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.08);
+}
 
 .stat-value {
   font-size: 36px;
@@ -51,20 +94,8 @@
   letter-spacing: 0.5px;
 }
 
-/* ── Quick links — fix full-width stretch ── */
-.admin-quick-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* Override btn-lg so it does NOT stretch full width */
-.admin-quick-links .btn {
-  flex: 0 0 auto;
-  width: auto !important;
-}
-
 @media (max-width: 640px) {
+  .admin-dash h1 { font-size: 24px; }
   .admin-stats { grid-template-columns: repeat(2, 1fr); }
-  .admin-quick-links { flex-direction: column; align-items: flex-start; }
+  .stat-value { font-size: 28px; }
 }
